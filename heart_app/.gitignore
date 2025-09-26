@@ -1,45 +1,136 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
-
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
-
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# Flutter/Dart/Pub
 .dart_tool/
-.flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
-/build/
-/coverage/
+build/
+flutter_export_environment.sh
 
-# Symbolication related
-app.*.symbols
+# IDE/Editor
+.idea/
+.vscode/
+*.iml
 
-# Obfuscation related
-app.*.map.json
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties# Flutter/Dart/Pub
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+flutter_export_environment.sh
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# IDE/Editor
+.idea/
+.vscode/
+*.iml
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/key.properties
+
+# iOS/Xcode
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+ios/Pods/
+ios/Podfile.lock
+ios/.symlinks/
+**/DerivedData/
+profile
+xcuserdata
+*.mode1v3
+*.mode2v3
+*.pbxuser
+*.perspectivev3
+*.moved-aside
+
+# macOS
+macos/Flutter/Flutter-Debug.xcconfig
+macos/Flutter/Flutter-Release.xcconfig
+macos/Pods/
+macos/Podfile.lock
+
+# Windows
+windows/flutter/generated_plugin_registrant.*
+windows/build/
+
+# Linux
+linux/flutter/generated_plugin_registrant.*
+linux/build/
+
+# Web
+web/.dart_tool/
+web/.firebase/
+
+# Test & Coverage
+coverage/
+test/**/.dart_tool/
+
+# Logs / Temp / OS
+*.log
+*.lock
+*.tmp
+*.swp
+*.DS_Store
+
+android/key.properties
+
+# iOS/Xcode
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+ios/Pods/
+ios/Podfile.lock
+ios/.symlinks/
+**/DerivedData/
+profile
+xcuserdata
+*.mode1v3
+*.mode2v3
+*.pbxuser
+*.perspectivev3
+*.moved-aside
+
+# macOS
+macos/Flutter/Flutter-Debug.xcconfig
+macos/Flutter/Flutter-Release.xcconfig
+macos/Pods/
+macos/Podfile.lock
+
+# Windows
+windows/flutter/generated_plugin_registrant.*
+windows/build/
+
+# Linux
+linux/flutter/generated_plugin_registrant.*
+linux/build/
+
+# Web
+web/.dart_tool/
+web/.firebase/
+
+# Test & Coverage
+coverage/
+test/**/.dart_tool/
+
+# Logs / Temp / OS
+*.log
+*.lock
+*.tmp
+*.swp
+*.DS_Store
