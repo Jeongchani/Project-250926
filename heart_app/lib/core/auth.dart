@@ -1,5 +1,5 @@
 
-import 'package:flutter/foundation.dart';
+/// lib/core/auth.dart
 
 /// 🧱 Auth scaffolding for future expansion
 /// - Today: anonymous only (local unique id)
