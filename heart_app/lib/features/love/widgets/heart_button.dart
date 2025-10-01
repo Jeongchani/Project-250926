@@ -29,18 +29,12 @@ class _HeartButtonState extends State<HeartButton> with SingleTickerProviderStat
     super.dispose();
   }
 
-  Future<void> _pulse() async {
-    await _c.forward();
-    await _c.reverse();
-  }
+  Future<void> _pulse() async { await _c.forward(); await _c.reverse(); }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        _pulse();
-        widget.onTap();
-      },
+      onTap: () { _pulse(); widget.onTap(); },
       child: ScaleTransition(
         scale: _scale,
         child: Icon(Icons.favorite, size: 140, color: widget.color),

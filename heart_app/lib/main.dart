@@ -2,11 +2,12 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:app_links/app_links.dart';
-import 'lib_services/local_store.dart';
-import 'lib_services/link_service.dart';
-import 'screens/main_screen.dart';
-import 'screens/settings_screen.dart';
-import 'screens/link_screen.dart';
+import 'core/app_state.dart';
+import 'core/local_store.dart';
+import 'core/theme.dart';
+import 'features/mode_select/mode_select_screen.dart';
+import 'features/love/love_home_screen.dart';
+import 'features/team/team_home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,21 +24,20 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late final AppState appState;
+  late final AppState app;
   late final AppLinks _appLinks;
   StreamSubscription<Uri>? _sub;
 
   @override
   void initState() {
     super.initState();
-    appState = AppState(widget.store);
+    app = AppState(widget.store);
     _appLinks = AppLinks();
 
-    // 초기 링크 + 이후 들어오는 링크 모두 이 스트림에서 처리
-    _sub = _appLinks.uriLinkStream.listen(
-      (uri) => LinkService.applyIncomingUri(appState, uri),
-      onError: (_) {},
-    );
+    // ✅ Handle initial + subsequent deep links in one stream
+    _sub = _appLinks.uriLinkStream.listen((uri) {
+      app.applyIncomingUri(uri);
+    }, onError: (_) {});
   }
 
   @override
@@ -49,21 +49,35 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
-      value: appState,
+      value: app,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Heart App',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: appState.heartColor),
-          useMaterial3: true,
-        ),
+        theme: buildTheme(app.heartColor),
         routes: {
-          '/': (_) => const MainScreen(),
-          '/settings': (_) => const SettingsScreen(),
-          '/link': (_) => const LinkScreen(),
+          '/': (_) => const _EntryRouter(),
+          '/love': (_) => const LoveHomeScreen(),
+          '/team': (_) => const TeamHomeScreen(),
+          '/mode': (_) => const ModeSelectScreen(),
         },
-        initialRoute: appState.onboarded ? '/' : '/link',
+        initialRoute: '/',
       ),
     );
+  }
+}
+
+/// Decides where to go on cold start based on saved mode choice.
+class _EntryRouter extends StatelessWidget {
+  const _EntryRouter(); //const _EntryRouter({super.key}) 잠시제거
+
+  @override
+  Widget build(BuildContext context) {
+    final app = context.watch<AppState>();
+    if (!app.modeChosen) {
+      return const ModeSelectScreen();
+    }
+    return app.mode == AppMode.love
+        ? const LoveHomeScreen()
+        : const TeamHomeScreen();
   }
 }
