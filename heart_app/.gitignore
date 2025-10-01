@@ -15,19 +15,122 @@ flutter_export_environment.sh
 android/.gradle/
 android/app/build/
 android/build/
+android/local.properties# Flutter/Dart/Pub
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+flutter_export_environment.sh
+
+# IDE/Editor
+.idea/
+.vscode/
+*.iml
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
 android/local.properties
 android/key.properties
 
-# Other platforms (not needed for Android release)
-ios/
-macos/
-windows/
-linux/
-web/
+# iOS/Xcode
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+ios/Pods/
+ios/Podfile.lock
+ios/.symlinks/
+**/DerivedData/
+profile
+xcuserdata
+*.mode1v3
+*.mode2v3
+*.pbxuser
+*.perspectivev3
+*.moved-aside
+
+# macOS
+macos/Flutter/Flutter-Debug.xcconfig
+macos/Flutter/Flutter-Release.xcconfig
+macos/Pods/
+macos/Podfile.lock
+
+# Windows
+windows/flutter/generated_plugin_registrant.*
+windows/build/
+
+# Linux
+linux/flutter/generated_plugin_registrant.*
+linux/build/
+
+# Web
+web/.dart_tool/
+web/.firebase/
+
+# Test & Coverage
+coverage/
+test/**/.dart_tool/
 
 # Logs / Temp / OS
 *.log
+*.lock
 *.tmp
 *.swp
+*.DS_Store
+
+android/key.properties
+
+# iOS/Xcode
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+ios/Pods/
+ios/Podfile.lock
+ios/.symlinks/
+**/DerivedData/
+profile
+xcuserdata
+*.mode1v3
+*.mode2v3
+*.pbxuser
+*.perspectivev3
+*.moved-aside
+
+# macOS
+macos/Flutter/Flutter-Debug.xcconfig
+macos/Flutter/Flutter-Release.xcconfig
+macos/Pods/
+macos/Podfile.lock
+
+# Windows
+windows/flutter/generated_plugin_registrant.*
+windows/build/
+
+# Linux
+linux/flutter/generated_plugin_registrant.*
+linux/build/
+
+# Web
+web/.dart_tool/
+web/.firebase/
+
+# Test & Coverage
+coverage/
+test/**/.dart_tool/
+
+# Logs / Temp / OS
+*.log
 *.lock
+*.tmp
+*.swp
 *.DS_Store
